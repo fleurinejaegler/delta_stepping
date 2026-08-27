@@ -48,14 +48,13 @@ cluster via `job.slurm`).
 
 Les fichiers de données générés (`*.npz`, `*.vtk`, `*.vti`) ne sont **pas** versionnés
 (voir [.gitignore](.gitignore)) : ils sont volumineux (jusqu'à plus de 100 Mo) et se
-régénèrent en relançant le pipeline ci-dessus dans l'ordre. Il faut donc partir de tes
-propres résultats de simulation (FEA / scène) pour reproduire une carte de dégâts.
+régénèrent en relançant le pipeline ci-dessus dans l'ordre. 
 
 ## Limitations connues
 
 - [gp_damage.py](gp_damage.py) importe deux modules non présents dans ce dépôt
   (`from kb import compute_pressure_for_source` et `from dammage import score_from_pressure`) :
-  le script ne s'exécute pas tel quel tant que ces modules ne sont pas fournis séparément.
+  le script ne s'exécute pas tel.
 - [fndegat.py](fndegat.py) référence un chemin relatif externe au dépôt
   (`../../03-POST/2D/output-post.vtk`), issu de l'arborescence de simulation d'origine.
 - [job.slurm](job.slurm) appelle `delta_stepping_mpi.py`, qui n'est pas présent dans ce
