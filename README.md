@@ -4,13 +4,7 @@ Pathfinding sur carte de dégâts urbains : calcule, pour une scène 3D avec bâ
 le trajet A→B qui **minimise les dégâts cumulés** en cas d'explosion accidentelle
 en cours de transport (charge de 40 kg TNT équivalent).
 
-Le "coût" de chaque case de la grille est un score de dégâts obtenu en combinant :
-- un modèle analytique **Kingery-Bulmash** (surpression en champ libre) atténué par
-  raycasting 2D sur les façades des bâtiments,
-- un **Processus Gaussien** entraîné sur des simulations FEA (Abaqus) qui corrige
-  le biais du modèle analytique.
-
-Le chemin optimal est ensuite calculé sur le graphe résultant avec l'algorithme
+Le chemin optimal es calculé grâce au score de dégâts de chaque case de la grille (obtenu par un modèle analytique Kingery-Bulmash et un processus gaussien) sur le graphe résultant avec l'algorithme
 **Delta-Stepping** (version séquentielle et version parallèle MPI).
 
 Le contexte détaillé du format de la carte de dégâts (`damage_map.npz`) est documenté
