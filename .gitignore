@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Données générées / volumineuses (voir README pour les régénérer)
+*.npz
+*.vtk
+*.vti
+damage_map.png
+damage_map.npz copie
+
+# Logs Slurm
+*.out
+*.err
